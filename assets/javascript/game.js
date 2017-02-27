@@ -174,7 +174,17 @@ $(document).ready(function () {
             atks.play();
             $(".enemySelected").effect("shake", 200);
             kill();
+            display();
         });
+
+        function display() {
+            $(".charStat").html("<br>Health: " + allyHp
+                + "<br>Attack: " + (allyAtk * dmg));
+            $(".enemyStat").html("<br><bold>" + foeName
+                + "</bold><br>Health: " + foeHp
+                + "<br>Attack: " + foeAtk);
+        }
+
 
         function kill() {
             foeHp -= allyAtk * dmg;
